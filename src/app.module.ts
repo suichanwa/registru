@@ -1,16 +1,16 @@
 /* eslint-disable prettier/prettier */
-import { Module, OnModuleInit } from '@nestjs/common';
-import { DatabaseTestService } from './database-test/database-test.service';
+import { Module } from '@nestjs/common';
+import { ConfigModule } from '@nestjs/config';
 import { DatabaseModule } from './database/database.module';
+import { TeacherModule } from './teacher/teacher.module';
 
 @Module({
-  imports: [DatabaseModule],
-  providers: [DatabaseTestService],
+  imports: [
+    ConfigModule.forRoot({
+      isGlobal: true,
+    }),
+    DatabaseModule,
+    TeacherModule,
+  ],
 })
-export class AppModule implements OnModuleInit {
-  constructor(private readonly dbTestService: DatabaseTestService) {}
-
-  async onModuleInit() {
-    await this.dbTestService.testConnection();
-  }
-}
+export class AppModule {}
