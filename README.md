@@ -4,7 +4,9 @@
 
 - Node.js
 - npm
-- Oracle Database -> https://www.oracle.com/database/technologies/
+- Oracle Database -> https://www.oracle.com/database/technologies/xe-downloads.html
+- SQL developer -> https://www.oracle.com/database/sqldeveloper/technologies/download/
+- Oracle client - https://www.oracle.com/database/technologies/instant-client/downloads.html
 
 ### Installation
 
@@ -13,6 +15,7 @@
 ```bash
 git clone https://github.com/your-repo/registru.git
 cd registru
+```
 
 ```bash
 npm install
